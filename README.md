@@ -76,14 +76,6 @@ Skills created in-house.
 | [`coolify-manager`](skills/ops/coolify-manager/SKILL.md) | Manage and troubleshoot Coolify deployments |
 | [`daily-devlog`](skills/ops/daily-devlog/SKILL.md) | Gather today's commits/PRs and write a devlog entry |
 
-### Personal / Niche
-
-| Skill | Description |
-|-------|-------------|
-| [`domain-name-brainstormer`](skills/personal/domain-name-brainstormer/SKILL.md) | Generate + availability-check domain names |
-| [`domain-naming-engine`](skills/personal/domain-naming-engine/SKILL.md) | Creative domain/brand name generator |
-| [`swiftui-pro`](skills/personal/swiftui-pro/SKILL.md) | SwiftUI best-practice review |
-
 ---
 
 ## Adopted Skills
