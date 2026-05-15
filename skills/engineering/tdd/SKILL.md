@@ -107,4 +107,12 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 [ ] Test would survive internal refactor
 [ ] Code is minimal for this test
 [ ] No speculative features added
+[ ] No tests for impossible or unreachable states
+[ ] Change is the smallest that satisfies the current requirement
 ```
+
+## Code discipline
+
+- **Smallest change first.** Write only enough code to pass the current test. Do not anticipate future tests or add logic "just in case."
+- **Deliberate changes only.** Every line added must be traceable to a specific failing test. If you cannot point to the test that requires a line, delete it.
+- **Do not test impossible situations.** Avoid tests for states the system's own invariants or types already prevent. Testing them adds noise, not safety.

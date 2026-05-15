@@ -156,6 +156,11 @@ Slug = title lowercased, spaces→hyphens, max 40 chars.
 - Run the project's test suite after each phase (check `docs/agents/` or `AGENTS.md` for the correct command)
 - Run linters/security scanners if configured
 
+**Code discipline (non-negotiable):**
+- Make the **smallest change** that satisfies the current requirement — no speculative logic, no extra abstractions
+- Every change must be **deliberate**: traceable to a specific test or explicit requirement
+- Do **not** test or guard against impossible situations — states the type system or existing invariants already prevent
+
 ### 4. Push + PR
 
 ```bash
