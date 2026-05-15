@@ -51,7 +51,14 @@ SYNC="$REPO/scripts/sync-upstream.sh"
 manifest_paths=()
 while IFS= read -r mp; do
   [ -n "$mp" ] && manifest_paths+=("$mp")
-done < <(grep '|' "$SYNC" | grep -v '^#' | sed 's/.*|\([^"]*\)".*/\1/' 2>/dev/null || true)
+done < <(python3 - "$SYNC" <<'PYEOF'
+import sys, re
+text = open(sys.argv[1]).read()
+# Match lines like "url|local_path|upstream_url" inside quotes
+for m in re.finditer(r'"[^"]+\|([^|"]+)\|[^"]*"', text):
+    print(m.group(1))
+PYEOF
+)
 
 # Build list of adopted skill dirs from README (everything under "Adopted Skills")
 # We trust README as source of truth for adopted vs original
