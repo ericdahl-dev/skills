@@ -1,6 +1,6 @@
 ---
 name: crush-code
-description: Autonomous issue-driven development loop for any repo. Works issues one by one using TDD and caveman mode, opens auto-merge PRs, resolves CI failures and merge conflicts, and pings the user via Telegram only when truly blocked. Use when user says "get to work", "work the issues", "keep going", or invokes /crush-code.
+description: Autonomous issue-driven development loop for any repo. Works issues one by one using TDD and caveman mode, opens auto-merge PRs, resolves CI failures and merge conflicts, and pings the user via Telegram only when truly blocked. ONLY activate when user explicitly invokes /crush-code or says "run crush-code" — do NOT activate for generic phrases like "get to work", "keep going", or "work the issues".
 ---
 
 # crush-code
