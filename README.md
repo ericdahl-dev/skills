@@ -43,7 +43,9 @@ Each skill is a `SKILL.md` file. When you invoke the skill name (e.g. `/tdd`, `/
 
 ---
 
-## Skills
+## Original Skills
+
+Skills created in-house.
 
 ### Engineering
 
@@ -51,31 +53,13 @@ Each skill is a `SKILL.md` file. When you invoke the skill name (e.g. `/tdd`, `/
 |-------|-------------|
 | [`6t7`](skills/engineering/6t7/SKILL.md) | Rails 6→7 upgrade ticket checker |
 | [`crush-code`](skills/engineering/crush-code/SKILL.md) | Autonomous issue-driven dev loop (TDD, auto-merge PRs, PR health) |
-| [`diagnose`](skills/engineering/diagnose/SKILL.md) | Disciplined debug loop: reproduce → minimise → fix → regression test |
 | [`github-triage`](skills/engineering/github-triage/SKILL.md) | Label-based GitHub issue triage state machine |
-| [`grill-with-docs`](skills/engineering/grill-with-docs/SKILL.md) | Stress-test a plan against CONTEXT.md and ADRs |
-| [`improve-codebase-architecture`](skills/engineering/improve-codebase-architecture/SKILL.md) | Find refactoring opportunities informed by domain language |
-| [`setup-matt-pocock-skills`](skills/engineering/setup-matt-pocock-skills/SKILL.md) | Bootstrap agent skill config (issue tracker, labels, domain docs) |
-| [`tdd`](skills/engineering/tdd/SKILL.md) | Red-green-refactor TDD loop |
-| [`to-issues`](skills/engineering/to-issues/SKILL.md) | Break a plan/PRD into independently-grabbable GitHub issues |
-| [`to-prd`](skills/engineering/to-prd/SKILL.md) | Turn conversation context into a published PRD |
-| [`triage`](skills/engineering/triage/SKILL.md) | Role-driven issue triage state machine |
-| [`vibe-check`](skills/engineering/vibe-check/SKILL.md) | Production resilience audit for AI-generated code |
-| [`vibe-explain`](skills/engineering/vibe-explain/SKILL.md) | Cognitive debt map — surfaces code you don't fully understand |
-| [`vibe-guard`](skills/engineering/vibe-guard/SKILL.md) | Full safety check: resilience + security + comprehension |
-| [`vibe-secure`](skills/engineering/vibe-secure/SKILL.md) | Security audit for AI-generated code |
-| [`zoom-out`](skills/engineering/zoom-out/SKILL.md) | Higher-level perspective on unfamiliar code |
 
 ### Productivity
 
 | Skill | Description |
 |-------|-------------|
-| [`caveman`](skills/productivity/caveman/SKILL.md) | Ultra-compressed communication mode (~75% fewer tokens) |
 | [`find-skills`](skills/productivity/find-skills/SKILL.md) | Discover and install new agent skills |
-| [`grill-me`](skills/productivity/grill-me/SKILL.md) | Relentless questioning to stress-test a plan |
-| [`handoff`](skills/productivity/handoff/SKILL.md) | Compact conversation into a handoff doc for the next agent |
-| [`prototype`](skills/productivity/prototype/SKILL.md) | Throwaway prototype to flesh out a design |
-| [`write-a-skill`](skills/productivity/write-a-skill/SKILL.md) | Create new agent skills with proper structure |
 
 ### Creative
 
@@ -100,3 +84,37 @@ Each skill is a `SKILL.md` file. When you invoke the skill name (e.g. `/tdd`, `/
 | [`domain-name-brainstormer`](skills/personal/domain-name-brainstormer/SKILL.md) | Generate + availability-check domain names |
 | [`domain-naming-engine`](skills/personal/domain-naming-engine/SKILL.md) | Creative domain/brand name generator |
 | [`swiftui-pro`](skills/personal/swiftui-pro/SKILL.md) | SwiftUI best-practice review |
+
+---
+
+## Adopted Skills
+
+Skills adopted from other open-source skill repos. Credit to the original authors.
+
+### From [mattpocock/skills](https://github.com/mattpocock/skills)
+
+| Skill | Description |
+|-------|-------------|
+| [`diagnose`](skills/engineering/diagnose/SKILL.md) | Disciplined debug loop: reproduce → minimise → fix → regression test |
+| [`grill-with-docs`](skills/engineering/grill-with-docs/SKILL.md) | Stress-test a plan against CONTEXT.md and ADRs |
+| [`improve-codebase-architecture`](skills/engineering/improve-codebase-architecture/SKILL.md) | Find refactoring opportunities informed by domain language |
+| [`setup-matt-pocock-skills`](skills/engineering/setup-matt-pocock-skills/SKILL.md) | Bootstrap agent skill config (issue tracker, labels, domain docs) |
+| [`tdd`](skills/engineering/tdd/SKILL.md) | Red-green-refactor TDD loop |
+| [`to-issues`](skills/engineering/to-issues/SKILL.md) | Break a plan/PRD into independently-grabbable GitHub issues |
+| [`to-prd`](skills/engineering/to-prd/SKILL.md) | Turn conversation context into a published PRD |
+| [`triage`](skills/engineering/triage/SKILL.md) | Role-driven issue triage state machine |
+| [`zoom-out`](skills/engineering/zoom-out/SKILL.md) | Higher-level perspective on unfamiliar code |
+| [`caveman`](skills/productivity/caveman/SKILL.md) | Ultra-compressed communication mode (~75% fewer tokens) |
+| [`grill-me`](skills/productivity/grill-me/SKILL.md) | Relentless questioning to stress-test a plan |
+| [`handoff`](skills/productivity/handoff/SKILL.md) | Compact conversation into a handoff doc for the next agent |
+| [`prototype`](skills/productivity/prototype/SKILL.md) | Throwaway prototype to flesh out a design |
+| [`write-a-skill`](skills/productivity/write-a-skill/SKILL.md) | Create new agent skills with proper structure |
+
+### From [codecoincognition/vibe-guard-skills](https://github.com/codecoincognition/vibe-guard-skills)
+
+| Skill | Description |
+|-------|-------------|
+| [`vibe-check`](skills/engineering/vibe-check/SKILL.md) | Production resilience audit for AI-generated code |
+| [`vibe-explain`](skills/engineering/vibe-explain/SKILL.md) | Cognitive debt map — surfaces code you don't fully understand |
+| [`vibe-guard`](skills/engineering/vibe-guard/SKILL.md) | Full safety check: resilience + security + comprehension |
+| [`vibe-secure`](skills/engineering/vibe-secure/SKILL.md) | Security audit for AI-generated code |
