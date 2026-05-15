@@ -51,7 +51,6 @@ Skills created in-house.
 
 | Skill | Description |
 |-------|-------------|
-| [`6t7`](skills/engineering/6t7/SKILL.md) | Rails 6→7 upgrade ticket checker |
 | [`crush-code`](skills/engineering/crush-code/SKILL.md) | Autonomous issue-driven dev loop (TDD, auto-merge PRs, PR health) |
 | [`github-triage`](skills/engineering/github-triage/SKILL.md) | Label-based GitHub issue triage state machine |
 
