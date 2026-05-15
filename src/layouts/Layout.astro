@@ -1,0 +1,134 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'AI agent skills for real engineering work.' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <a href={`${import.meta.env.BASE_URL}`} class="site-logo">crush<span class="accent">-skills</span></a>
+    <nav>
+      <a href="https://github.com/ericdahl-dev/skills" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/ericdahl-dev/skills#quick-install" class="nav-install" target="_blank" rel="noopener">Install</a>
+    </nav>
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer class="site-footer">
+    <span>ericdahl-dev/skills</span>
+    <span class="footer-sep">·</span>
+    <a href="https://github.com/ericdahl-dev/skills" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --bg-card-hover: #161616;
+    --border: #222222;
+    --text: #e8e8e8;
+    --text-muted: #666;
+    --text-dim: #999;
+    --accent: #39ff8a;
+    --accent-dim: rgba(57,255,138,0.12);
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --max-w: 1100px;
+    --radius: 4px;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+
+  .site-logo {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .site-logo:hover { text-decoration: none; }
+  .site-logo .accent { color: var(--accent); }
+
+  .site-header nav { display: flex; align-items: center; gap: 1.5rem; }
+  .site-header nav a { color: var(--text-dim); font-size: 0.875rem; font-family: var(--font-mono); }
+  .site-header nav a:hover { color: var(--text); text-decoration: none; }
+
+  .nav-install {
+    background: var(--accent-dim) !important;
+    color: var(--accent) !important;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    font-size: 0.8rem !important;
+  }
+  .nav-install:hover { background: rgba(57,255,138,0.2) !important; }
+
+  main { flex: 1; max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; width: 100%; }
+
+  .site-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .footer-sep { color: var(--border); }
+  .site-footer a { color: var(--text-muted); }
+  .site-footer a:hover { color: var(--accent); text-decoration: none; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    main { padding: 0 1.25rem; }
+    .site-header { padding: 1rem 1.25rem; }
+  }
+</style>
