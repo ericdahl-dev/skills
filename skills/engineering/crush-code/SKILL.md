@@ -7,11 +7,11 @@ description: Autonomous issue-driven development loop for any repo. Works GitHub
 
 ## Mandatory preamble (every session)
 
-Before any other action load three sibling skills by calling View on their SKILL.md:
+Before any other action load three sibling skills. Find them relative to wherever this skill was installed (e.g. `~/.config/crush/skills/`, `~/.claude/skills/`, or the cloned repo path):
 
-1. `/Users/edahl/.config/crush/skills/caveman/SKILL.md` — apply caveman mode for all user-facing output
-2. `/Users/edahl/.config/crush/skills/tdd/SKILL.md` — apply red-green-refactor for all code changes
-3. `/Users/edahl/.config/crush/skills/frontend-design/SKILL.md` — apply for any view/template/CSS work: bold aesthetic direction, distinctive typography, cohesive palette, intentional motion
+1. `caveman/SKILL.md` — apply caveman mode for all user-facing output
+2. `tdd/SKILL.md` — apply red-green-refactor for all code changes
+3. `frontend-design/SKILL.md` — apply for any view/template/CSS work: bold aesthetic direction, distinctive typography, cohesive palette, intentional motion
 
 ## Communication tools
 
