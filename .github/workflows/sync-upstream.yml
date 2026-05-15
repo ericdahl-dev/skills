@@ -39,12 +39,6 @@ jobs:
           git push origin "$BRANCH"
           gh pr create \
             --title "chore: sync adopted skills from upstream ($(date +%Y-%m-%d))" \
-            --body "Automated sync of adopted skills from upstream repos.
-
-**Sources:**
-- [mattpocock/skills](https://github.com/mattpocock/skills)
-- [codecoincognition/vibe-guard-skills](https://github.com/codecoincognition/vibe-guard-skills)
-
-Review the diff before merging — upstream may have breaking changes." \
+            --body "Automated sync. Sources: mattpocock/skills, codecoincognition/vibe-guard-skills. Review diff before merging." \
             --base main \
             --label "upstream-sync" || true
