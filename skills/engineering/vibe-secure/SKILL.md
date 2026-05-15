@@ -1,4 +1,5 @@
 ---
+upstream: "https://github.com/codecoincognition/vibe-guard-skills"
 name: vibe-secure
 description: Security audit for AI-generated code. Catches hardcoded secrets, injection surfaces, auth gaps, and insecure defaults that AI commonly introduces silently. Use on git diff (default), full repo (--full), or critical-only quick pass (--quick).
 ---

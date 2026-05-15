@@ -1,4 +1,5 @@
 ---
+upstream: "https://github.com/codecoincognition/vibe-guard-skills"
 name: vibe-check
 description: Production resilience audit for AI-generated code. Catches edge cases, scale failures, and missing error handling that break in production but pass in dev. Use on git diff (default), full repo (--full), or critical-only quick pass (--quick).
 ---
