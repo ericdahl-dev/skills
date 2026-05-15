@@ -26,7 +26,7 @@ const byCategory = Object.fromEntries(
   <section class="hero">
     <div class="hero-eyebrow">agent skills</div>
     <h1 class="hero-headline">Ship real code.<br /><span class="accent">Stop vibe coding.</span></h1>
-    <p class="hero-sub">A curated collection of AI agent skills for engineers who care about quality. Works with Crush, Claude Code, Cursor, Windsurf, and GitHub Copilot.</p>
+    <p class="hero-sub">A curated collection of original and adopted AI agent skills for engineers who care about quality. Works with Crush, Claude Code, Cursor, Windsurf, and GitHub Copilot.</p>
     <div class="hero-ctas">
       <a href="https://github.com/ericdahl-dev/skills#quick-install" class="cta-primary">Install in 30 seconds</a>
       <a href="https://github.com/ericdahl-dev/skills" class="cta-secondary">View on GitHub →</a>
@@ -34,6 +34,11 @@ const byCategory = Object.fromEntries(
     <div class="install-snippet">
       <span class="prompt">$</span>
       <code>git clone https://github.com/ericdahl-dev/skills ~/.skills &amp;&amp; cd ~/.skills &amp;&amp; ./scripts/link-skills.sh</code>
+    </div>
+    <div class="attribution-bar">
+      <span>Original skills by <a href="https://github.com/ericdahl-dev" target="_blank" rel="noopener">ericdahl-dev</a></span>
+      <span class="sep">·</span>
+      <span>Adopted from <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock/skills</a> and <a href="https://github.com/codecoincognition/vibe-guard-skills" target="_blank" rel="noopener">codecoincognition/vibe-guard-skills</a></span>
     </div>
   </section>
 
@@ -120,6 +125,20 @@ const byCategory = Object.fromEntries(
   }
   .install-snippet .prompt { color: var(--accent); user-select: none; }
   .install-snippet code { color: var(--text); background: none; padding: 0; font-size: inherit; white-space: nowrap; }
+
+  .attribution-bar {
+    margin-top: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .attribution-bar a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
+  .attribution-bar a:hover { color: var(--accent); }
+  .attribution-bar .sep { color: var(--border); }
 
   .skills-section { padding: 3rem 0 1rem; animation: fade-up 0.5s ease both; animation-delay: 0.1s; }
   .section-label {
