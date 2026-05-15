@@ -1,4 +1,5 @@
 ---
+upstream: "https://github.com/codecoincognition/vibe-guard-skills"
 name: vibe-explain
 description: Cognitive debt map for AI-generated code. Surfaces opaque blocks you don't fully own or understand, generates plain-English explanations, and scores overall comprehension debt. Use on git diff (default), full repo (--full), or sensitive-paths quick pass (--quick).
 ---

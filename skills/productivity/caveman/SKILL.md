@@ -1,4 +1,5 @@
 ---
+upstream: "https://github.com/mattpocock/skills"
 name: caveman
 description: >
   Ultra-compressed communication mode. Cuts token usage ~75% by dropping

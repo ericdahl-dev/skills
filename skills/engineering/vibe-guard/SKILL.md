@@ -1,4 +1,5 @@
 ---
+upstream: "https://github.com/codecoincognition/vibe-guard-skills"
 name: vibe-guard
 description: Full safety check for AI-generated code before pushing. Runs production resilience, security, and comprehension audits in one pass and produces a single prioritized report. Run this at the end of every Claude coding session before git push. Supports --full (whole repo) and --quick (critical-only, ~10s mid-edit).
 ---

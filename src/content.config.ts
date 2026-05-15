@@ -6,6 +6,7 @@ const skills = defineCollection({
   schema: z.object({
     name: z.string(),
     description: z.string(),
+    upstream: z.string().url().optional(),
     license: z.string().optional(),
     metadata: z.record(z.any()).optional(),
   }),

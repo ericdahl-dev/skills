@@ -23,7 +23,14 @@ const githubUrl = `https://github.com/ericdahl-dev/skills/blob/main/skills/${ski
       <div class="skill-category">{category}</div>
       <h1 class="skill-name">/{skill.data.name}</h1>
       <p class="skill-desc">{skill.data.description}</p>
-      <a href={githubUrl} class="source-link" target="_blank" rel="noopener">View source on GitHub →</a>
+      <div class="skill-meta">
+        <a href={githubUrl} class="source-link" target="_blank" rel="noopener">View source →</a>
+        {skill.data.upstream && (
+          <span class="upstream-badge">
+            Adopted from <a href={skill.data.upstream} target="_blank" rel="noopener">{skill.data.upstream.replace('https://github.com/', '')}</a>
+          </span>
+        )}
+      </div>
     </header>
     <div class="prose">
       <Content />
@@ -71,12 +78,29 @@ const githubUrl = `https://github.com/ericdahl-dev/skills/blob/main/skills/${ski
     border-left: 2px solid var(--accent);
     padding-left: 1rem;
   }
+  .skill-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
   .source-link {
     font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--text-muted);
   }
   .source-link:hover { color: var(--accent); }
+  .upstream-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--accent-dim);
+    border: 1px solid rgba(57,255,138,0.25);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+  .upstream-badge a { color: var(--accent); }
+  .upstream-badge a:hover { text-decoration: underline; }
 
   .prose { font-size: 0.95rem; line-height: 1.75; }
   .prose :global(h1), .prose :global(h2), .prose :global(h3) {
