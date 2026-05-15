@@ -1,0 +1,28 @@
+title: crush-skills
+description: AI agent skills for real engineering work
+baseurl: ""
+url: "https://ericdahl-dev.github.io"
+repository: ericdahl-dev/skills
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+include:
+  - skills
+
+collections:
+  skills:
+    output: true
+    permalink: /skills/:path/
+
+defaults:
+  - scope:
+      path: "skills"
+      type: "skills"
+    values:
+      layout: skill
+
+markdown: kramdown

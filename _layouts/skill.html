@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="skill">
+  <header>
+    <h1>{{ page.name | default: page.title }}</h1>
+    {% if page.description %}
+    <p class="description">{{ page.description }}</p>
+    {% endif %}
+    <p class="meta">
+      <span class="category">{{ page.path | split: '/' | first }}</span>
+      &middot;
+      <a href="https://github.com/ericdahl-dev/skills/blob/main/{{ page.path }}">View on GitHub</a>
+    </p>
+  </header>
+  <div class="skill-body">
+    {{ content }}
+  </div>
+</article>
