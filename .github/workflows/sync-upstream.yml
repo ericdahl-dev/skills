@@ -1,0 +1,50 @@
+name: Sync upstream skills
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # every Monday at 06:00 UTC
+  workflow_dispatch:      # allow manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch upstream skills
+        id: sync
+        run: |
+          chmod +x scripts/sync-upstream.sh
+          if scripts/sync-upstream.sh; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR if anything changed
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="sync/upstream-$(date +%Y-%m-%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "chore: sync adopted skills from upstream"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "chore: sync adopted skills from upstream ($(date +%Y-%m-%d))" \
+            --body "Automated sync of adopted skills from upstream repos.
+
+**Sources:**
+- [mattpocock/skills](https://github.com/mattpocock/skills)
+- [codecoincognition/vibe-guard-skills](https://github.com/codecoincognition/vibe-guard-skills)
+
+Review the diff before merging — upstream may have breaking changes." \
+            --base main \
+            --label "upstream-sync" || true
