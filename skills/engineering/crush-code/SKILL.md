@@ -3,7 +3,7 @@ name: crush-code
 description: Autonomous issue-driven development loop for any repo. Works GitHub Issues one by one using TDD and caveman mode, opens auto-merge PRs, resolves CI failures and merge conflicts, and pings the user via Telegram only when truly blocked. Use when user says "get to work", "work the issues", "keep going", or invokes /crush-code.
 ---
 
-# ericdahl-crush-code
+# crush-code
 
 ## Mandatory preamble (every session)
 
