@@ -1,6 +1,6 @@
 ---
 name: crush-code
-description: Autonomous issue-driven development loop for any repo. Works issues one by one using TDD and caveman mode, opens auto-merge PRs, resolves CI failures and merge conflicts, and pings the user via Telegram only when truly blocked. Use when user says "get to work", "work the issues", "keep going", or invokes /crush-code.
+description: Autonomous issue-driven development loop for any repo. Works issues one by one using TDD and caveman mode, opens auto-merge PRs, resolves CI failures and merge conflicts, and pings the user via Telegram only when truly blocked. ONLY activate when user explicitly invokes /crush-code or says "run crush-code" — do NOT activate for generic phrases like "get to work", "keep going", or "work the issues".
 ---
 
 # crush-code
@@ -21,7 +21,7 @@ Before starting, detect how issues are tracked in this repo. Check in order:
 2. **GitHub remote** — `git remote -v` contains `github.com` → use `gh issue` CLI.
 3. **GitLab remote** — `git remote -v` contains `gitlab.com` → use `glab issue` CLI.
 4. **`.scratch/`** directory exists → local markdown issues (see below).
-5. **Fallback** — ask via `telegram_ask` "How are issues tracked in this repo?" then follow instructions.
+5. **Fallback** — ask via `telegram_ask` (or terminal prompt if Telegram unavailable): "How are issues tracked in this repo?" then follow instructions.
 
 ### Local markdown issues (`.scratch/`)
 
@@ -29,14 +29,23 @@ Before starting, detect how issues are tracked in this repo. Check in order:
 - Read: `cat .scratch/<name>/issue.md`
 - Close: move to `.scratch/done/<name>/` or delete
 
+## Telegram detection
+
+At session start, check whether Telegram is configured by verifying the `telegram_send_message` tool is available in the current session. Set a mental flag `TELEGRAM=yes/no`.
+
+- **`TELEGRAM=yes`** — use `telegram_send_message` / `telegram_ask` as described below.
+- **`TELEGRAM=no`** — replace every Telegram call with plain terminal output:
+  - `telegram_send_message` → print status line to stdout
+  - `telegram_ask` → print the question + options to stdout, then **pause and wait for the user to reply in the terminal** before continuing
+
 ## Communication tools
 
 | Tool | When |
 |------|------|
-| `telegram_send_message` | Fire-and-forget status (PR opened, CI red, blocked) |
-| `telegram_ask` | Block and wait for human input (ambiguous requirement, risky delete, credentials needed) |
+| `telegram_send_message` (or stdout) | Fire-and-forget status (PR opened, CI red, blocked) |
+| `telegram_ask` (or stdin prompt) | Block and wait for human input (ambiguous requirement, risky delete, credentials needed) |
 
-Telegram only when truly stuck. Prefer autonomous decisions.
+Notify only when truly stuck. Prefer autonomous decisions.
 
 ## Issue loop
 
@@ -105,7 +114,7 @@ glab mr merge <MR> --squash           # GitLab
 
 Only move to step 1 once all open PRs/MRs are resolved or genuinely blocked.
 
-If blocked: `telegram_ask` "PR blocked: <reason>. Options?" with buttons ["Fix it", "Close PR", "Skip for now"]
+If blocked: ask (via `telegram_ask` or terminal prompt): "PR blocked: <reason>. Options? [Fix it / Close PR / Skip for now]"
 
 ### 1. Pick issue
 
@@ -128,7 +137,7 @@ ls .scratch/ | head -1   # pick first open issue dir
 cat .scratch/<name>/issue.md
 ```
 
-If none found: `telegram_send_message` "no ready-for-agent issues. triage first?" then stop.
+If none found: notify (via `telegram_send_message` or stdout): "no ready-for-agent issues. triage first?" then stop.
 
 ### 2. Branch
 
@@ -146,6 +155,11 @@ Slug = title lowercased, spaces→hyphens, max 40 chars.
 - Refactor: clean up
 - Run the project's test suite after each phase (check `docs/agents/` or `AGENTS.md` for the correct command)
 - Run linters/security scanners if configured
+
+**Code discipline (non-negotiable):**
+- Make the **smallest change** that satisfies the current requirement — no speculative logic, no extra abstractions
+- Every change must be **deliberate**: traceable to a specific test or explicit requirement
+- Do **not** test or guard against impossible situations — states the type system or existing invariants already prevent
 
 ### 4. Push + PR
 
@@ -174,7 +188,7 @@ gh pr merge --auto --squash
 glab mr create --title "<issue title>" --description "Closes #<NUMBER>" --squash-before-merge
 ```
 
-Send: `telegram_send_message` "PR opened for issue #<NUMBER> — auto-merge on."
+Notify: "PR opened for issue #<NUMBER> — auto-merge on." (via `telegram_send_message` or stdout)
 
 ### 5. CI watch
 
@@ -183,7 +197,7 @@ Send: `telegram_send_message` "PR opened for issue #<NUMBER> — auto-merge on."
 
 On failure:
 - Read logs and fix
-- If fix needs human decision: `telegram_ask` with buttons ["Fix it", "Skip", "Close issue"]
+- If fix needs human decision: ask (via `telegram_ask` or terminal prompt): "CI failed: <reason>. [Fix it / Skip / Close issue]"
 
 ### 6. Conflict check
 
@@ -205,7 +219,7 @@ git checkout main && git pull
 - GitLab: `glab issue close <NUMBER>`
 - Local: `mv .scratch/<name> .scratch/done/`
 
-Send: `telegram_send_message` "issue #<NUMBER> merged. moving to next."
+Notify: "issue #<NUMBER> merged. moving to next." (via `telegram_send_message` or stdout)
 
 Loop back to step 0.
 

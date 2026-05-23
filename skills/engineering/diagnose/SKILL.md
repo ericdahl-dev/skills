@@ -91,6 +91,8 @@ Tool preference:
 
 ## Phase 5 — Fix + regression test
 
+**Fix discipline:** make the smallest change that eliminates the bug. Do not refactor surrounding code, add defensive guards for impossible states, or broaden the fix beyond what the repro requires. One cause → one targeted change.
+
 Write the regression test **before the fix** — but only if there is a **correct seam** for it.
 
 A correct seam is one where the test exercises the **real bug pattern** as it occurs at the call site. If the only available seam is too shallow (single-caller test when the bug needs multiple callers, unit test that can't replicate the chain that triggered the bug), a regression test there gives false confidence.

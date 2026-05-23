@@ -26,6 +26,8 @@ Key principles (see [LANGUAGE.md](LANGUAGE.md) for the full list):
 - **Deletion test**: imagine deleting the module. If complexity vanishes, it was a pass-through. If complexity reappears across N callers, it was earning its keep.
 - **The interface is the test surface.**
 - **One adapter = hypothetical seam. Two adapters = real seam.**
+- **Smallest change first.** Propose the minimal refactor that improves depth or locality — not a full rewrite. Each suggestion should be independently shippable.
+- **Deliberate changes only.** Every proposed change must be motivated by observed friction, not theoretical improvement. If you cannot point to the specific pain, skip it.
 
 This skill is _informed_ by the project's domain model. The domain language gives names to good seams; ADRs record decisions the skill should not re-litigate.
 
