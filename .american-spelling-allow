@@ -1,0 +1,43 @@
+# Words and paths the American-spelling check accepts (scripts/american_spelling.py in ericdahl-dev/.github).
+
+# Skills adopted from upstream repos (mattpocock/skills, codecoincognition/vibe-guard-skills).
+# scripts/sync-upstream.sh overwrites these files with the upstream text, so a local spelling
+# fix would be reverted on the next sync. Keep this list in step with UPSTREAM_MAP there.
+path: skills/engineering/diagnose/SKILL.md
+path: skills/engineering/diagnose/scripts/hitl-loop.template.sh
+path: skills/engineering/grill-with-docs/SKILL.md
+path: skills/engineering/grill-with-docs/ADR-FORMAT.md
+path: skills/engineering/grill-with-docs/CONTEXT-FORMAT.md
+path: skills/engineering/improve-codebase-architecture/SKILL.md
+path: skills/engineering/improve-codebase-architecture/DEEPENING.md
+path: skills/engineering/improve-codebase-architecture/INTERFACE-DESIGN.md
+path: skills/engineering/improve-codebase-architecture/LANGUAGE.md
+path: skills/engineering/setup-matt-pocock-skills/SKILL.md
+path: skills/engineering/setup-matt-pocock-skills/domain.md
+path: skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md
+path: skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md
+path: skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md
+path: skills/engineering/setup-matt-pocock-skills/triage-labels.md
+path: skills/engineering/tdd/SKILL.md
+path: skills/engineering/tdd/deep-modules.md
+path: skills/engineering/tdd/interface-design.md
+path: skills/engineering/tdd/mocking.md
+path: skills/engineering/tdd/refactoring.md
+path: skills/engineering/tdd/tests.md
+path: skills/engineering/to-issues/SKILL.md
+path: skills/engineering/to-prd/SKILL.md
+path: skills/engineering/triage/SKILL.md
+path: skills/engineering/triage/AGENT-BRIEF.md
+path: skills/engineering/triage/OUT-OF-SCOPE.md
+path: skills/engineering/zoom-out/SKILL.md
+path: skills/productivity/caveman/SKILL.md
+path: skills/productivity/grill-me/SKILL.md
+path: skills/productivity/handoff/SKILL.md
+path: skills/productivity/prototype/SKILL.md
+path: skills/productivity/prototype/LOGIC.md
+path: skills/productivity/prototype/UI.md
+path: skills/productivity/write-a-skill/SKILL.md
+path: skills/engineering/vibe-guard/SKILL.md
+path: skills/engineering/vibe-check/SKILL.md
+path: skills/engineering/vibe-secure/SKILL.md
+path: skills/engineering/vibe-explain/SKILL.md

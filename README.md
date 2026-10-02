@@ -86,7 +86,7 @@ Skills adopted from other open-source skill repos. Credit to the original author
 
 | Skill | Description |
 |-------|-------------|
-| [`diagnose`](skills/engineering/diagnose/SKILL.md) | Disciplined debug loop: reproduce → minimise → fix → regression test |
+| [`diagnose`](skills/engineering/diagnose/SKILL.md) | Disciplined debug loop: reproduce → minimize → fix → regression test |
 | [`grill-with-docs`](skills/engineering/grill-with-docs/SKILL.md) | Stress-test a plan against CONTEXT.md and ADRs |
 | [`improve-codebase-architecture`](skills/engineering/improve-codebase-architecture/SKILL.md) | Find refactoring opportunities informed by domain language |
 | [`setup-matt-pocock-skills`](skills/engineering/setup-matt-pocock-skills/SKILL.md) | Bootstrap agent skill config (issue tracker, labels, domain docs) |
