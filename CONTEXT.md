@@ -1,10 +1,10 @@
-# crush-skills — Context
+# claude-skills — Context
 
 ## What this repo is
 
 A curated collection of AI agent skills for real engineering work. Skills are markdown files (`SKILL.md`) that AI agents read and follow when invoked by name (e.g. `/tdd`, `/diagnose`).
 
-Works with any agent that reads markdown: Crush, Claude Code, Cursor, Windsurf, GitHub Copilot.
+Works with any agent that reads markdown: Claude Code, Cursor, Windsurf, GitHub Copilot.
 
 ## Structure
 
@@ -23,9 +23,8 @@ scripts/
 
 ## Skill taxonomy
 
-- **Original** — created in-house (crush-code, github-triage, daily-devlog, creative skills, etc.)
+- **Original** — created in-house (github-triage, daily-devlog, creative skills, etc.)
 - **Adopted** — sourced from upstream open-source repos with attribution:
-  - [mattpocock/skills](https://github.com/mattpocock/skills)
   - [codecoincognition/vibe-guard-skills](https://github.com/codecoincognition/vibe-guard-skills)
 
 ## Pages

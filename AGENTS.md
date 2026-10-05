@@ -1,4 +1,4 @@
-# crush-skills — Agent Configuration
+# claude-skills — Agent Configuration
 
 ## Agent skills
 
@@ -20,8 +20,9 @@ Single-context repo — one `CONTEXT.md` + `docs/adr/` at the repo root. See `do
 
 1. Place the skill under `skills/<category>/<skill-name>/SKILL.md` (and any sibling reference files).
 2. Add a row to the correct table in `README.md` (Original or Adopted section).
-3. If adopted, add every file to the `UPSTREAM_MAP` array in `scripts/sync-upstream.sh`.
-4. Ensure `SKILL.md` has valid YAML frontmatter (`name`, `description`) — Pages uses this to render the skill index.
+3. Add a `"./skills/<category>/<skill-name>"` entry to `.claude-plugin/plugin.json`.
+4. If adopted, add every file to the `UPSTREAM_MAP` array in `scripts/sync-upstream.sh`.
+5. Ensure `SKILL.md` has valid YAML frontmatter (`name`, `description`) — Pages uses this to render the skill index.
 
 ### Adopting a skill from upstream
 
@@ -35,8 +36,9 @@ Single-context repo — one `CONTEXT.md` + `docs/adr/` at the repo root. See `do
 
 1. Delete the skill directory from `skills/`.
 2. Remove the row from `README.md`.
-3. If adopted, remove its entries from `UPSTREAM_MAP` in `scripts/sync-upstream.sh`.
-4. Remove from local editor installs if needed (`scripts/link-skills.sh`).
+3. Remove from `.claude-plugin/plugin.json`.
+4. If adopted, remove its entries from `UPSTREAM_MAP` in `scripts/sync-upstream.sh`.
+5. Remove from local editor installs if needed (`scripts/link-skills.sh`).
 
 ### Pages
 

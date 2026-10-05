@@ -2,10 +2,9 @@
 # link-skills.sh — symlink all skills into one or more AI editor skill dirs.
 # Usage:
 #   ./scripts/link-skills.sh              # interactive: pick editors
-#   ./scripts/link-skills.sh crush claude cursor windsurf
+#   ./scripts/link-skills.sh claude cursor windsurf
 #
 # Supported editors:
-#   crush      → ~/.config/crush/skills/
 #   claude     → ~/.claude/skills/              (Claude Code CLI)
 #   cursor     → ~/.cursor/rules/               (Cursor rules dir — copies as .mdc)
 #   windsurf   → ~/.codeium/windsurf/memories/  (Windsurf memories)
@@ -17,7 +16,6 @@ REPO="$(cd "$(dirname "$0")/.." && pwd)"
 SKILLS_ROOT="$REPO/skills"
 
 EDITOR_DIRS=(
-  "crush:$HOME/.config/crush/skills"
   "claude:$HOME/.claude/skills"
   "cursor:$HOME/.cursor/rules"
   "windsurf:$HOME/.codeium/windsurf/memories"
@@ -84,7 +82,7 @@ if [[ $# -gt 0 ]]; then
   editors=("$@")
 else
   echo "Which editors should skills be installed for?"
-  echo "Available: crush, claude, cursor, windsurf, copilot"
+  echo "Available: claude, cursor, windsurf, copilot"
   echo "(space-separated, e.g.: crush claude)"
   read -r -p "> " input
   IFS=' ' read -r -a editors <<< "$input"

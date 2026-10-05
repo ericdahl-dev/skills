@@ -17,46 +17,9 @@ CHANGED=0
 # ---------------------------------------------------------------------------
 # Manifest: upstream_raw_url | local_destination_path | upstream_repo_url
 # ---------------------------------------------------------------------------
-MATTPOCOCK="https://github.com/mattpocock/skills"
 VIBE_GUARD="https://github.com/codecoincognition/vibe-guard-skills"
 
 UPSTREAM_MAP=(
-  # --- mattpocock/skills ---
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/diagnose/SKILL.md|skills/engineering/diagnose/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/diagnose/scripts/hitl-loop.template.sh|skills/engineering/diagnose/scripts/hitl-loop.template.sh|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/grill-with-docs/SKILL.md|skills/engineering/grill-with-docs/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/grill-with-docs/ADR-FORMAT.md|skills/engineering/grill-with-docs/ADR-FORMAT.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/grill-with-docs/CONTEXT-FORMAT.md|skills/engineering/grill-with-docs/CONTEXT-FORMAT.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/improve-codebase-architecture/SKILL.md|skills/engineering/improve-codebase-architecture/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/improve-codebase-architecture/DEEPENING.md|skills/engineering/improve-codebase-architecture/DEEPENING.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/improve-codebase-architecture/INTERFACE-DESIGN.md|skills/engineering/improve-codebase-architecture/INTERFACE-DESIGN.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/improve-codebase-architecture/LANGUAGE.md|skills/engineering/improve-codebase-architecture/LANGUAGE.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/setup-matt-pocock-skills/SKILL.md|skills/engineering/setup-matt-pocock-skills/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/setup-matt-pocock-skills/domain.md|skills/engineering/setup-matt-pocock-skills/domain.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md|skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md|skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md|skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/setup-matt-pocock-skills/triage-labels.md|skills/engineering/setup-matt-pocock-skills/triage-labels.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/SKILL.md|skills/engineering/tdd/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/deep-modules.md|skills/engineering/tdd/deep-modules.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/interface-design.md|skills/engineering/tdd/interface-design.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/mocking.md|skills/engineering/tdd/mocking.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/refactoring.md|skills/engineering/tdd/refactoring.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/tdd/tests.md|skills/engineering/tdd/tests.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/to-issues/SKILL.md|skills/engineering/to-issues/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/to-prd/SKILL.md|skills/engineering/to-prd/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/triage/SKILL.md|skills/engineering/triage/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/triage/AGENT-BRIEF.md|skills/engineering/triage/AGENT-BRIEF.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/triage/OUT-OF-SCOPE.md|skills/engineering/triage/OUT-OF-SCOPE.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/zoom-out/SKILL.md|skills/engineering/zoom-out/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/caveman/SKILL.md|skills/productivity/caveman/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/grill-me/SKILL.md|skills/productivity/grill-me/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/handoff/SKILL.md|skills/productivity/handoff/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/prototype/SKILL.md|skills/productivity/prototype/SKILL.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/prototype/LOGIC.md|skills/productivity/prototype/LOGIC.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/engineering/prototype/UI.md|skills/productivity/prototype/UI.md|$MATTPOCOCK"
-  "https://raw.githubusercontent.com/mattpocock/skills/main/skills/productivity/write-a-skill/SKILL.md|skills/productivity/write-a-skill/SKILL.md|$MATTPOCOCK"
-
   # --- codecoincognition/vibe-guard-skills ---
   "https://raw.githubusercontent.com/codecoincognition/vibe-guard-skills/main/skills/vibe-guard.md|skills/engineering/vibe-guard/SKILL.md|$VIBE_GUARD"
   "https://raw.githubusercontent.com/codecoincognition/vibe-guard-skills/main/skills/vibe-check.md|skills/engineering/vibe-check/SKILL.md|$VIBE_GUARD"

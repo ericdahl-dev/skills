@@ -1,0 +1,18 @@
+{
+  "name": "ericdahl-skills",
+  "skills": [
+    "./skills/engineering/crush-code",
+    "./skills/engineering/github-triage",
+    "./skills/engineering/vibe-check",
+    "./skills/engineering/vibe-explain",
+    "./skills/engineering/vibe-guard",
+    "./skills/engineering/vibe-secure",
+    "./skills/productivity/find-skills",
+    "./skills/creative/copywriting",
+    "./skills/creative/frontend-design",
+    "./skills/creative/landing-page-copywriter",
+    "./skills/creative/web-design-guidelines",
+    "./skills/ops/coolify-manager",
+    "./skills/ops/daily-devlog"
+  ]
+}

@@ -1,11 +1,11 @@
 ---
 name: daily-devlog
-description: Gather today's verified work (commits, PRs, deployments) across all relevant GitHub accounts and repos, then create or update today's markdown entry in the edahl_UND.github.io devlog. Use when the user says "update the devlog", "add today's log", "log today's work", or "what did I do today".
+description: Gather today's verified work (commits, PRs, deployments) across all relevant GitHub accounts and repos, then create or update today's markdown entry in the Skeyelab.github.io devlog. Use when the user says "update the devlog", "add today's log", "log today's work", or "what did I do today".
 ---
 
 # Daily Devlog
 
-Gathers verifiable work evidence and writes/replaces `entries/YYYY-MM-DD.md` in `~/Documents/GitHub/edahl_UND.github.io/`. Safe to run multiple times a day — always rebuilds today's file from scratch using all available evidence.
+Gathers verifiable work evidence and writes/replaces `entries/YYYY-MM-DD.md` in `~/Documents/GitHub/Skeyelab.github.io/`. Safe to run multiple times a day — always rebuilds today's file from scratch using all available evidence.
 
 ## Quick start
 
@@ -15,35 +15,35 @@ Gathers verifiable work evidence and writes/replaces `entries/YYYY-MM-DD.md` in 
 
 ## Workflow
 
-**Scope: `edahl_UND` account only.** Do not include activity from `ericdahl-dev`, `Skeyelab`, or any other account.
+**Scope: `Skeyelab` account only.** Do not include activity from other accounts.
 
 ### 1. Gather evidence (run in parallel)
 
 ```bash
 TODAY=$(date +%Y-%m-%d)
 
-# PRs — annex-ims (edahl_UND only)
-gh pr list --repo ndlibrary/annex-ims --author edahl_UND \
+# PRs — annex-ims (Skeyelab only)
+gh pr list --repo ndlibrary/annex-ims --author Skeyelab \
   --state all --limit 30 \
   --json number,title,state,createdAt,mergedAt,url,headRefName
 
-# PRs — annex-blueprints-cdk (edahl_UND only)
-gh pr list --repo ndlibrary/annex-blueprints-cdk --author edahl_UND \
+# PRs — annex-blueprints-cdk (Skeyelab only)
+gh pr list --repo ndlibrary/annex-blueprints-cdk --author Skeyelab \
   --state all --limit 20 \
   --json number,title,state,createdAt,mergedAt,url,headRefName
 
 # Commits today — annex-blueprints-cdk
-gh api "repos/ndlibrary/annex-blueprints-cdk/commits?since=${TODAY}T00:00:00Z&author=edahl_UND" \
+gh api "repos/ndlibrary/annex-blueprints-cdk/commits?since=${TODAY}T00:00:00Z&author=Skeyelab" \
   --jq '.[].commit | "\(.author.date[:16]) \(.message | split("\n")[0])"'
 
 # Check for other ndlibrary repos with activity today
 gh api "orgs/ndlibrary/repos?sort=updated&per_page=30" --jq '.[].name'
 # For any repo updated today, run:
-# gh pr list --repo ndlibrary/REPO --author edahl_UND --state all --limit 10 \
+# gh pr list --repo ndlibrary/REPO --author Skeyelab --state all --limit 10 \
 #   --json number,title,state,createdAt,mergedAt,url
 ```
 
-Filter all results to today's date only. Discard any activity not authored by `edahl_UND`. Note: the GitHub commits API `author=` filter is not always reliable — cross-check PR author via `gh pr view N --json author` if uncertain.
+Filter all results to today's date only. Discard any activity not authored by `Skeyelab`. Note: the GitHub commits API `author=` filter is not always reliable — cross-check PR author via `gh pr view N --json author` if uncertain.
 
 Filter all results to today's date only.
 
@@ -58,7 +58,7 @@ Wait for the response before writing the entry.
 
 ### 2. Write the entry file
 
-Target: `~/Documents/GitHub/edahl_UND.github.io/entries/YYYY-MM-DD.md`
+Target: `~/Documents/GitHub/Skeyelab.github.io/entries/YYYY-MM-DD.md`
 
 - If the file **exists** → overwrite it completely with freshly gathered data.
 - If it **doesn't exist** → create it.
@@ -119,7 +119,7 @@ Tags: `rails` · `aws` · `bootstrap` · `cdk` · `ci` · `specs` · `docker` ·
 
 ### 4. Register in manifest (if new date)
 
-Open `~/Documents/GitHub/edahl_UND.github.io/app.js` and check the `ENTRIES` array at the top. Each entry is an object with `date` and `type`. If the date is not already present, prepend it (newest first):
+Open `~/Documents/GitHub/Skeyelab.github.io/app.js` and check the `ENTRIES` array at the top. Each entry is an object with `date` and `type`. If the date is not already present, prepend it (newest first):
 
 ```js
 const ENTRIES = [
@@ -141,7 +141,7 @@ Always use the absolute path — the skill may be invoked from any repo. Capture
 
 ```bash
 ORIGIN=$(pwd)
-DEVLOG=~/Documents/GitHub/edahl_UND.github.io
+DEVLOG=~/Documents/GitHub/Skeyelab.github.io
 cd $DEVLOG
 git add entries/ app.js
 git commit -m "devlog: YYYY-MM-DD"
@@ -162,7 +162,7 @@ cd $ORIGIN
 ## Site layout
 
 ```
-edahl_UND.github.io/
+Skeyelab.github.io/
 ├── index.html          # reader shell (sidebar + marked.js renderer)
 ├── app.js              # ENTRIES manifest + fetch/render logic
 ├── style.css           # dark terminal aesthetic
